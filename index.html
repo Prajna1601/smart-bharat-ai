@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Bharat AI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>🇮🇳 Smart Bharat AI</h2>
+
+            <p>AI Powered Civic Companion</p>
+
+        </div>
+
+        <div class="menu">
+
+            <button class="nav active">
+                <i class="fa-solid fa-robot"></i>
+                AI Assistant
+            </button>
+
+            <button class="nav">
+                <i class="fa-solid fa-file-circle-check"></i>
+                Document Checker
+            </button>
+
+            <button class="nav">
+                <i class="fa-solid fa-award"></i>
+                Scheme Finder
+            </button>
+
+            <button class="nav">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Complaint Generator
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main">
+
+<header>
+
+<h1>Smart Bharat AI</h1>
+
+<p>Simplifying Government Services using Generative AI</p>
+
+</header>
+
+<!-- AI Assistant -->
+
+<div id="assistantPage" class="page">
+
+<section class="cards">
+
+<div class="card quick-card">
+
+📄
+
+<h3>Passport</h3>
+
+<p>Application Guide</p>
+
+</div>
+
+<div class="card quick-card">
+
+🎓
+
+<h3>Scholarships</h3>
+
+<p>Government Benefits</p>
+
+</div>
+
+<div class="card quick-card">
+
+🚗
+
+<h3>Driving Licence</h3>
+
+<p>Application Process</p>
+
+</div>
+
+<div class="card quick-card">
+
+🚨
+
+<h3>Complaint</h3>
+
+<p>Generate Complaint</p>
+
+</div>
+
+</section>
+
+<section class="chat-container">
+
+<div class="response" id="response">
+
+<h2>👋 Welcome</h2>
+
+<p>Ask Smart Bharat AI anything.</p>
+
+</div>
+
+<div class="portal-buttons" id="portalButtons" style="display:none;">
+
+    <a id="portalLink" href="#" target="_blank">
+
+        <button id="portalBtn">
+
+            🚀 Proceed to Official Portal
+
+        </button>
+
+    </a>
+
+</div>
+
+<div class="input-box">
+
+    <div class="language-container">
+
+        <label for="language">🌐 Response Language</label>
+
+        <select id="language">
+
+            <option value="English">English</option>
+
+            <option value="Hindi">हिन्दी</option>
+
+            <option value="Kannada">ಕನ್ನಡ</option>
+
+            <option value="Tamil">தமிழ்</option>
+
+            <option value="Telugu">తెలుగు</option>
+
+            <option value="Malayalam">മലയാളം</option>
+
+            <option value="Marathi">मराठी</option>
+
+            <option value="Bengali">বাংলা</option>
+
+        </select>
+
+    </div>
+
+    <textarea
+        id="prompt"
+        placeholder="Ask Smart Bharat AI anything...
+Example:
+How do I apply for a Passport?
+Generate a BBMP complaint.
+Suggest scholarships for engineering students."
+    ></textarea>
+
+    <div class="buttons">
+
+<button id="copy">
+
+<i class="fa-solid fa-copy"></i>
+
+Copy
+
+</button>
+<button id="download">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+PDF
+
+</button>
+
+<button id="clear">
+
+<i class="fa-solid fa-trash"></i>
+
+Clear
+
+</button>
+
+<button id="mic">
+    <i class="fa-solid fa-microphone"></i>
+    Speak
+</button>
+
+<button id="send">
+    <i class="fa-solid fa-paper-plane"></i>
+    Ask AI
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<!-- Document Checker -->
+
+<div id="documentPage" class="page hidden">
+
+<h2>📄 Document Checker</h2>
+
+<p>Enter a government service.</p>
+
+<input
+type="text"
+id="documentInput"
+placeholder="Passport">
+
+<button id="documentBtn">
+
+Generate Checklist
+
+</button>
+
+<div id="documentOutput"
+class="response">
+
+</div>
+
+</div>
+
+<!-- Scheme Finder -->
+
+<div id="schemePage" class="page hidden">
+
+<h2>🎓 Scheme Finder</h2>
+
+<input
+type="number"
+id="age"
+placeholder="Age">
+
+<input
+type="text"
+id="state"
+placeholder="State">
+
+<input
+type="text"
+id="occupation"
+placeholder="Occupation">
+
+<button id="schemeBtn">
+
+Find Schemes
+
+</button>
+
+<div id="schemeOutput"
+class="response">
+
+</div>
+
+</div>
+
+<!-- Complaint -->
+
+<div id="complaintPage" class="page hidden">
+
+<h2>🚨 Complaint Generator</h2>
+
+<input
+type="text"
+id="issue"
+placeholder="Issue">
+
+<input
+type="text"
+id="location"
+placeholder="Location">
+
+<button id="complaintBtn">
+
+Generate Complaint
+
+</button>
+
+<div id="complaintOutput"
+class="response">
+
+</div>
+
+</div>
+
+</main>
+
+    <script src="prompts.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</body>
+
+</html>
